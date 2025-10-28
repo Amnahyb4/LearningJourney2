@@ -1,7 +1,7 @@
 Learning App
 An interactive and personalized learning companion that helps users build daily learning habits, track progress, and stay motivated through streaks, topics, and visual insights.
 
-🌟 Features
+🌟 Features:
 
 🗓 Daily Learning Streaks – Track your consistency and visualize progress on a weekly calendar.
 
@@ -13,7 +13,7 @@ An interactive and personalized learning companion that helps users build daily 
 
 🧠 Tech Stack
 
-Language: Swift
+Language: Swift:
 
 Framework: SwiftUI (MVVM Architecture)
 
@@ -21,7 +21,7 @@ Storage: Core Data / UserDefaults (depending on implementation)
 
 Other Tools: Combine, Swift Charts (optional for progress visualization)
 
-👩‍💻 Author
+👩‍💻 Author:
 
 Amnah Y. Albrahim
 
