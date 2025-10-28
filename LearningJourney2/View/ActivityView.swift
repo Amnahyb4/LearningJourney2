@@ -259,7 +259,7 @@ struct ActivityView: View {
                         .frame(width: 240, height: 90)
                 } else if presenter.viewState.isSelectedDayLearned {
                     Circle()
-                        .fill(Color("darkOrange"))
+                        .fill(Color("brown2"))
                     Circle()
                         .strokeBorder(Color.orange.opacity(0.7), lineWidth: 1)
 
