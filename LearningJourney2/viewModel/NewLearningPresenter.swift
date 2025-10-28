@@ -104,6 +104,11 @@ final class NewLearningPresenter: ObservableObject {
         viewState.persistedStartDate = now
         viewState.targetDays = newTarget
 
+        // 2.5 Reset Activity persistence so streak and day statuses start fresh
+        UserDefaults.standard.set(0, forKey: ActivityStorageKeys.currentStreak)
+        UserDefaults.standard.set(0, forKey: ActivityStorageKeys.lastActionTimestamp)
+        UserDefaults.standard.set("{}", forKey: ActivityStorageKeys.dayStatusesJSON)
+
         // 3. close popup, then flip navigation flag
         withAnimation(.easeInOut) {
             viewState.showUpdatePopup = false
