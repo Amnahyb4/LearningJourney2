@@ -17,38 +17,34 @@ Learning Journey is a SwiftUI-based (iOS 16+) interactive and personalized learn
 
 ---
 
-## 🧠 App Architecture (MVVM)
+## App Architecture (MVVM)
 
 ---
 
-### 🧩 Model  
-**Files:** `ActivityModels.swift`, `Duration.swift`, `LearningGoal.swift`, `NewLearningModels.swift`  
-Handles the **core business logic and data types** — including logging and freezing days, streak rules, goal/topic & duration tracking, and snapshot data structures.
+- **Model –** `ActivityModels.swift`, `Duration.swift`, `LearningGoal.swift`, `NewLearningModels.swift`  
+  Business logic & data types: log/freeze days, streak rules, goal/topic & duration, snapshot shapes.
 
----
+- **ViewModel / Presenter –** `ContentViewModel.swift`, `ActivityPresenter.swift`, `NewLearningPresenter.swift`  
+  Exposes read-only state to Views; handles actions (`logToday()`, `freezeToday()`, `select(date:)`); manages navigation flags and autosave to `UserDefaults` (no separate persistence file).
 
-### ⚙️ ViewModel / Presenter  
-**Files:** `ContentViewModel.swift`, `ActivityPresenter.swift`, `NewLearningPresenter.swift`  
-Manages the **application state** and connects logic to views.  
-- Exposes read-only state to `Views`  
-- Handles actions: `logToday()`, `freezeToday()`, `select(date:)`  
-- Manages navigation flags and automatically saves progress to `UserDefaults` (no external persistence layer)
+- **Views**
+  - `ActivityView.swift` – Home: toolbar, progress card, primary actions  
+  - `NewLearningView.swift` – Topic & duration setup  
+  - `CalendarSheet.swift`, `MonthYearPickerSheet.swift` – Calendar/month picker sheets  
+  - Components: `WeekStrip`, `ToolbarView`, `CalendarProgressView`, `LogActionButton`, `FreezeButton`, `NewGoalButton`, `GoalCompletedView`
 
----
+- **Persistence –** `Persistence`  
+  Encodes a lightweight `LearningProgressSnapshot` to `UserDefaults` (ISO-8601 dates).  
+  **Guard:** App only boots to Activity if a valid topic + duration were saved.
 
-### 🪄 Views  
-- `ActivityView.swift` — Home screen with toolbar, progress card, and primary actions  
-- `NewLearningView.swift` — Setup screen for topic & duration  
-- `CalendarSheet.swift`, `MonthYearPickerSheet.swift` — Calendar and month picker sheets  
-- `WeekStrip.swift` — Displays ISO week + day pills; maps `DayStatus` → color states  
-- `ContentView.swift`, `SimpleTextField.swift` — App shell & reusable input components  
 
----
+## Getting Started
 
-### 🚀 App Entry  
-**File:** `LearningJourney2App.swift`  
-- Launches directly to `ActivityView` if a valid topic and duration exist  
-- Otherwise, presents `NewLearningView` for onboarding setup  
+1- Clone the repository: [https://github.com/Amnahyb4/LearningJourney2.git](https://github.com/Amnahyb4/LearningJourney2.git)
+
+2- Open in Xcode: Select **Clone from Remote Repository**.
+
+3- Build & run on an iPhone simulator or device that supports **iOS 16.0+**.
 
 ---
 
