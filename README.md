@@ -1,55 +1,66 @@
 Learning Journey App
 ---------------------------------------------------------------------------------------------------------- 
 
-<p align="center">
+<p align="left">
   <img src="https://raw.githubusercontent.com/Amnahyb4/LearningJourney2/main/Learning%20Icon.svg" width="200">
 </p>
 
 Learning Journey is a SwiftUI-based (iOS 16+) interactive and personalized learning companion designed to help users cultivate consistent daily learning habits, monitor their progress, and stay motivated through engaging streaks, customizable topics, and insightful visual progress tracking.
 
 ### 🖼️ Preview
-| | |
-|:--:|:--:|
-| <img src="https://raw.githubusercontent.com/Amnahyb4/LearningJourney2/main/IMG_0010.PNG" width="250"/> | <img src="https://raw.githubusercontent.com/Amnahyb4/LearningJourney2/main/IMG_0011.PNG" width="250"/> |
-| <img src="https://raw.githubusercontent.com/Amnahyb4/LearningJourney2/main/IMG_0013.PNG" width="250"/> |  |
+
+<p align="center">
+  <img src="https://raw.githubusercontent.com/Amnahyb4/LearningJourney2/main/IMG_0010.PNG" width="250" style="margin-right:10px;"/>
+  <img src="https://raw.githubusercontent.com/Amnahyb4/LearningJourney2/main/IMG_0011.PNG" width="250" style="margin-right:10px;"/>
+  <img src="https://raw.githubusercontent.com/Amnahyb4/LearningJourney2/main/IMG_0013.PNG" width="250"/>
+</p>
 
 ---
-Features:
------------------------------------------------------------------------------------------------------------
-✍️ Onboarding – Type your learning topic and pick a duration.
-🔥 Streaks – Log “Learned Today”; auto-count your current streak.
-🧊 Freeze days – Limited “skip” days per goal (2/week, 8/month, 96/year).
-📆 Calendar – Month list + weekly view; coloured dots for learned/frozen days.
-✅ Goal updates – Change your goal mid-cycle (option to reset counters).
-💾 Local persistence – Progress saved to disk; app opens to Activity only after onboarding.
 
-App Architecture (MVVM)
---------------------------------------------------------------------------------------------------------------
-Model— ActivityModels.swift, Duration.swift, LearningGoal.swift, NewLearningModels.swift
-Business logic & data types: log/freeze days, streak rules, goal/topic & duration, snapshot shapes.
+## 🧠 App Architecture (MVVM)
 
-ViewModel / Presenter — ContentViewModel.swift, ActivityPresenter.swift, NewLearningPresenter.swift
-Exposes read-only state to Views; handles actions (logToday(), freezeToday(), select(date:)), navigation flags, and autosave to UserDefaults (no separate persistence file).
+---
 
-Views
-ActivityView.swift — Home: toolbar, progress card, primary actions
-NewLearningView.swift — Topic & duration setup
-CalendarSheet.swift, MonthYearPickerSheet.swift — Calendar/month picker sheets
-WeekStrip.swift — ISO week + day pills; maps DayStatus → colors
-ContentView.swift, SimpleTextField.swift — App shell & reusable input
-App Entry — LearningJourney2App.swift
-Boots to ActivityView when a valid topic + duration exist; otherwise shows NewLearningView.
+### 🧩 Model  
+**Files:** `ActivityModels.swift`, `Duration.swift`, `LearningGoal.swift`, `NewLearningModels.swift`  
+Handles the **core business logic and data types** — including logging and freezing days, streak rules, goal/topic & duration tracking, and snapshot data structures.
 
-Requirements:
---------------------------------------------------------------------------------------------------------------
-iOS 26+
-Xcode 26+
+---
 
-Author:
-----------------
+### ⚙️ ViewModel / Presenter  
+**Files:** `ContentViewModel.swift`, `ActivityPresenter.swift`, `NewLearningPresenter.swift`  
+Manages the **application state** and connects logic to views.  
+- Exposes read-only state to `Views`  
+- Handles actions: `logToday()`, `freezeToday()`, `select(date:)`  
+- Manages navigation flags and automatically saves progress to `UserDefaults` (no external persistence layer)
 
-Amnah Y. Albrahim
+---
 
-🎓 Artificial Intelligence Graduate – Imam Abdulrahman Bin Faisal University
+### 🪄 Views  
+- `ActivityView.swift` — Home screen with toolbar, progress card, and primary actions  
+- `NewLearningView.swift` — Setup screen for topic & duration  
+- `CalendarSheet.swift`, `MonthYearPickerSheet.swift` — Calendar and month picker sheets  
+- `WeekStrip.swift` — Displays ISO week + day pills; maps `DayStatus` → color states  
+- `ContentView.swift`, `SimpleTextField.swift` — App shell & reusable input components  
 
-💡 Passionate about building intelligent, user-centered educational experiences.
+---
+
+### 🚀 App Entry  
+**File:** `LearningJourney2App.swift`  
+- Launches directly to `ActivityView` if a valid topic and duration exist  
+- Otherwise, presents `NewLearningView` for onboarding setup  
+
+---
+
+## 🧾 Requirements
+
+- **iOS 16+**  
+- **Xcode 16+**
+
+---
+
+## 👩🏻‍💻 Author
+
+**Amnah Y. Albrahim**  
+🎓 *Artificial Intelligence Graduate – Imam Abdulrahman Bin Faisal University*  
+💡 *Passionate about building intelligent, user-centered educational experiences.*
