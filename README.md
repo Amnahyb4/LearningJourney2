@@ -1,7 +1,7 @@
 Learning Journey App
 ---------------------------------------------------------------------------------------------------------- 
 
-<p align="left">
+<p align="center">
   <img src="https://raw.githubusercontent.com/Amnahyb4/LearningJourney2/main/Learning%20Icon.svg" width="200">
 </p>
 
@@ -15,11 +15,11 @@ Learning Journey is a SwiftUI-based (iOS 16+) interactive and personalized learn
   <img src="https://raw.githubusercontent.com/Amnahyb4/LearningJourney2/main/IMG_0013.PNG" width="250"/>
 </p>
 
----
+
 
 ## App Architecture (MVVM)
 
----
+
 
 - **Model –** `ActivityModels.swift`, `Duration.swift`, `LearningGoal.swift`, `NewLearningModels.swift`  
   Business logic & data types: log/freeze days, streak rules, goal/topic & duration, snapshot shapes.
@@ -38,22 +38,19 @@ Learning Journey is a SwiftUI-based (iOS 16+) interactive and personalized learn
   **Guard:** App only boots to Activity if a valid topic + duration were saved.
 
 
+
+
 ## Getting Started
 
 1- Clone the repository: [https://github.com/Amnahyb4/LearningJourney2.git](https://github.com/Amnahyb4/LearningJourney2.git)
 
 2- Open in Xcode: Select **Clone from Remote Repository**.
 
-3- Build & run on an iPhone simulator or device that supports **iOS 16.0+**.
+3- Build & run on an iPhone simulator or device that supports **iOS 26.0+**.
 
----
 
-## 🧾 Requirements
 
-- **iOS 16+**  
-- **Xcode 16+**
 
----
 
 ## 👩🏻‍💻 Author
 
